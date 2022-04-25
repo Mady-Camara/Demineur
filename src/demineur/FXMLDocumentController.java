@@ -24,6 +24,8 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
+    int i;
+    
     @FXML
     private Label label;
     
@@ -41,9 +43,21 @@ public class FXMLDocumentController implements Initializable {
         app.show();
     }
     
+    @FXML
+    private void handleButtonAction2(ActionEvent event) throws Exception {
+        System.out.println("Bonsoir");
+        
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+    public void setScore(int i){
+        this.i = i;     
+        label.setText(String.valueOf(i));
+    }
+
     
 }
