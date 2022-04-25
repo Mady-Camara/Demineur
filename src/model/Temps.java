@@ -1,0 +1,75 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package model;
+
+import java.util.Observable;
+import java.util.Timer;
+import java.util.TimerTask;
+
+/**
+ *
+ * @author salif
+ */
+public class Temps extends Observable {
+    public Timer timer;
+    
+    private int timePast;
+    private boolean isStarted;
+    
+    /**
+     * Constructor
+     */
+    public Temps(){
+        this.timePast = 0;
+        this.isStarted = false;
+    }
+    
+    /**
+     * Restart the game timer
+     */
+    public void restart(){
+        isStarted = false;
+        this.start();
+    }
+    
+    /**
+     * Start the timer
+     */
+    public void start(){
+        if(isStarted == true){
+            return;
+        }
+        isStarted = true;
+        this.timePast = 0;
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask(){
+            @Override
+            public void run() {
+                timePast ++;
+                setChanged();
+                notifyObservers();
+            }
+        }, 0, 1000);
+    }
+
+    /**
+     * Stop the timer
+     */
+    public void stop(){
+        if(isStarted){
+            timer.cancel();
+            timer.purge();
+        }
+        isStarted = false;
+    }
+    
+    /**
+     * Return the time past since it started
+     * @return int Time past since it was started
+     */
+    public int getTime(){
+        return timePast;
+    }
+}
