@@ -147,7 +147,7 @@ public class FXMLDebutantController implements Initializable {
         game.temps.addObserver(new Observer(){
             @Override
             public void update(Observable o, Object arg) {
-                timer.setText("Time: "+ game.temps.getTime());
+                timer.setText("Temps: "+ game.temps.getTime());
             }
         });
         
@@ -227,7 +227,7 @@ public class FXMLDebutantController implements Initializable {
         infoTop.getChildren().addAll(minesLeft, minesLeftText, endGameText, scoreText, bestScoreText);
         
         /* Timer */
-        timer = new Text("Time: 0");
+        timer = new Text("Temps: 0");
         timer.setFont(Font.font ("Verdana", 20));
         timer.setFill(Color.BLACK);
         
@@ -264,7 +264,7 @@ public class FXMLDebutantController implements Initializable {
         endGameText.setText("");
         scoreText.setText("");
         bestScoreText.setText("Meilleur Score: " + Score.getBestScore(game.niveau) + " est " + Score.getBestTime(game.niveau)+ " secondes.");
-        timer.setText("Time: 0");
+        timer.setText("Temps: 0");
         initScene();
     }
     
