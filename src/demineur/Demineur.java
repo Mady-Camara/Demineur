@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
- */
 package demineur;
 
 import javafx.application.Application;
@@ -12,7 +8,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author salif
+ * @author Mady
  */
 public class Demineur extends Application {
     
@@ -22,7 +18,7 @@ public class Demineur extends Application {
         
         Scene scene = new Scene(root);
         
-        stage.setTitle("Demineur");
+        stage.setTitle("démineur");
         stage.setScene(scene);
         stage.show();
     }

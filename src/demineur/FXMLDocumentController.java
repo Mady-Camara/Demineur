@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
- */
 package demineur;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -13,51 +8,43 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
  *
- * @author salif
+ * @author Mady
  */
 public class FXMLDocumentController implements Initializable {
     
-    int i;
-    
-    @FXML
-    private Label label;
-    
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLJeu.fxml"));
-        
-        //Scene scene = new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLGame.fxml"));
         Stage app = (Stage)((Node) event.getSource()).getScene().getWindow();
-        app.setScene(new Scene(root));
-        app.setTitle("Demineur");
-        app.show();
+        app.close();
     }
     
     @FXML
     private void handleButtonAction2(ActionEvent event) throws Exception {
-        System.out.println("Bonsoir");
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLDebutant.fxml"));
+        Stage app = (Stage)((Node) event.getSource()).getScene().getWindow();
+        app.close();
+        
+    }
+    
+    @FXML
+    private void handleButtonAction3(ActionEvent event) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLExpert.fxml"));
+        Stage app = (Stage)((Node) event.getSource()).getScene().getWindow();
+        app.close();
         
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        //
     }
     
-    public void setScore(int i){
-        this.i = i;     
-        label.setText(String.valueOf(i));
-    }
 
     
 }
