@@ -55,7 +55,6 @@ public class FXMLGameController implements Initializable {
         EMPTY_RESSOURCE = new Image("images/empty.jpg");
         
         VALUES_RESSOURCE = new Image[10];
-        VALUES_RESSOURCE[0] = new Image("images/zero.jpg");
         VALUES_RESSOURCE[1] = new Image("images/one.jpg");
         VALUES_RESSOURCE[2] = new Image("images/two.jpg");
         VALUES_RESSOURCE[3] = new Image("images/three.jpg");

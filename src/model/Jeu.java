@@ -45,7 +45,7 @@ public class Jeu extends Observable {
         this.hiddenTile = niveau.width * niveau.height;
         this.endOfGame = false;
         
-        Score_2.load();
+        Score.load();
     }
     
     /***

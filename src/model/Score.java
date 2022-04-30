@@ -43,7 +43,7 @@ public class Score implements Serializable {
                 switch (t.getState()) {
                     
                     case Case.STATE_FLAG :
-                        if(t.getValue() == Tile.MINE) {
+                        if(t.getValue() == Case.MINE) {
                             score += 10;
                         } else {
                             score -= 5;
@@ -55,7 +55,7 @@ public class Score implements Serializable {
                         break;
                         
                     case Case.STATE_SHOWN :
-                        if(t.getValue() == Tile.MINE) {
+                        if(t.getValue() == Case.MINE) {
                             //do nothing
                             //the player loose
                         } else {
